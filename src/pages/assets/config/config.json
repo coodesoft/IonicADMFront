@@ -1,0 +1,5 @@
+{
+  "urlAuthLogin":"http://localhost/PHPAuth/API/session/login",
+  "urlAuthReset":"http://localhost/PHPAuth/API/session/new-reset-pass-token",
+  "urlAuthUpdatePass":"http://localhost/PHPAuth/API/session/update-pass"
+}
