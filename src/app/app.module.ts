@@ -28,7 +28,7 @@ import { B64toPDFService } from '../services/64to-pdf.service';
 import { GeneralService }  from '../services/general.service';
 
 //Importación de componentes
-import { UserInfoComponent }       from '../components/user-info/user-info';
+import { UserInfoComponent } from '../components/user-info/user-info';
 
 import { BrowserAnimationsModule}                         from '@angular/platform-browser/animations';
 import { MatSelectModule }                                from '@angular/material/select';
@@ -59,7 +59,7 @@ export const YYYY_MM_DD_Format = {
   declarations: [
     MyApp,
     HomePage,
-    LoginPage,
+    LoginPage, ResetPassPage, UserInfoComponent,
     ActualizacionPerfilPage,
     ErrorPage,
     SideMenuContentComponent,
@@ -80,19 +80,18 @@ export const YYYY_MM_DD_Format = {
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage,
+    LoginPage, UserInfoComponent, ResetPassPage,
     ActualizacionPerfilPage,
-    ResetPassPage,
-    ErrorPage,
+    ErrorPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler},
-    {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
-    {provide: MAT_DATE_FORMATS, useValue: YYYY_MM_DD_Format },
-    AuthProvider,
-    ConfigProvider
+    { provide: ErrorHandler,     useClass: IonicErrorHandler },
+    { provide: DateAdapter,      useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE]},
+    { provide: MAT_DATE_FORMATS, useValue: YYYY_MM_DD_Format },
+    AuthProvider,  ConfigProvider,
+    GeneralService, B64toPDFService, FormateoService
   ]
 })
 export class AppModule {}

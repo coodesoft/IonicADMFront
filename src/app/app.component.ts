@@ -1,18 +1,13 @@
 import { Nav, Platform, MenuController } from 'ionic-angular';
-
 import { Component, ViewChild } from '@angular/core';
-
-import { Storage } from '@ionic/storage';
 import { Events } from 'ionic-angular';
-
-
-import { ReplaySubject }        from "rxjs/ReplaySubject";
 
 import { StatusBar }            from '@ionic-native/status-bar';
 import { SplashScreen }         from '@ionic-native/splash-screen';
 
 import { HomePage }                from '../pages/home/home';
 import { LoginPage }               from '../pages/login/login';
+import { ActualizacionPerfilPage } from '../pages/actualizacion-perfil/actualizacion-perfil';
 
 // Side Menu Component
 import { SideMenuContentComponent } from './../shared/side-menu-content/side-menu-content.component';
@@ -44,17 +39,12 @@ export class MyApp {
 		}
 	};
 
-  private unreadCountObservable: any = new ReplaySubject<number>(0);
-
-
   constructor(
     public platform:        Platform,
     public statusBar:       StatusBar,
     public splashScreen:    SplashScreen,
 		private menuCtrl:       MenuController,
-    private storage:        Storage,
     private configProvider: ConfigProvider,
-    private ocupProvider  : OcupacionesProvider,
     public events:          Events
   ) {
     this.initializeConfig();
@@ -70,11 +60,6 @@ export class MyApp {
 			this.statusBar.styleLightContent();
 			this.splashScreen.hide();
 		});
-
-		// Change the value for the batch every 5 seconds
-		setInterval(() => {
-			this.unreadCountObservable.next(Math.floor(Math.random() * 10));
-		}, 5000);
 
 	}
 
