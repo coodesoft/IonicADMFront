@@ -59,10 +59,10 @@ export const YYYY_MM_DD_Format = {
   declarations: [
     MyApp,
     HomePage,
-    LoginPage, ResetPassPage, UserInfoComponent,
+    LoginPage, ResetPassPage, UserInfoComponent, PerfilesUsuariosPage,
     ActualizacionPerfilPage,
     ErrorPage,
-    SideMenuContentComponent,
+    SideMenuContentComponent, SearchSelectComponent
   ],
   imports: [
     BrowserModule,
@@ -70,19 +70,16 @@ export const YYYY_MM_DD_Format = {
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     BrowserAnimationsModule,
-    MatNativeDateModule,MatInputModule, MatFormFieldModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    MatAutocompleteModule,
-    MatTableModule
+    MatNativeDateModule,MatInputModule, MatFormFieldModule, MatSelectModule, MatDatepickerModule, MatAutocompleteModule, MatTableModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage, UserInfoComponent, ResetPassPage,
+    LoginPage, UserInfoComponent, ResetPassPage, PerfilesUsuariosPage,
     ActualizacionPerfilPage,
-    ErrorPage
+    ErrorPage,
+    SearchSelectComponent
   ],
   providers: [
     StatusBar,
