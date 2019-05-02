@@ -20,7 +20,13 @@ export class EmpresaAdmPage {
     private modalCtrl:    ModalController,
     private organization: OrganizationProvider,
     private gral:         GeneralService
-  ) { }
+  ) {
+    window.onresize = () => {
+      this.scrollBarHorizontal = (window.innerWidth < 1200);
+    };
+  }
+
+  private scrollBarHorizontal = (window.innerWidth < 1200);
 
   private orga_model = new Organization();
 

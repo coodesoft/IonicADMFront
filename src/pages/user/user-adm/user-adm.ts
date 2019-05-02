@@ -24,7 +24,11 @@ export class UserAdmPage {
     private userProv:  UserProvider,
     private gral:      GeneralService,
     private orga:      OrganizationProvider
-  ) {}
+  ) {
+    window.onresize = () => {
+      this.scrollBarHorizontal = (window.innerWidth < 1200);
+    };
+  }
 
   private createOK;
   private createKO;
@@ -43,6 +47,8 @@ export class UserAdmPage {
 
   private user_model:User = new User();
   private id_item:string;
+
+  private scrollBarHorizontal = (window.innerWidth < 1200);
 
   private modalUser; //[Modificar] usar el ondissmiss del modal en vez de crear un nuevo subject aparte
   create(){
@@ -173,6 +179,7 @@ export class UserAdmPage {
 
   ionViewDidLoad() {
   }
+
 
 }
 
