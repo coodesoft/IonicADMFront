@@ -1,0 +1,89 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Nuevo Pago - Coodesoft</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row>
+        <ion-col col-12 col-sm-4 col-md-4 col-lg-3 col-xl-2 offset-xl-3>
+            <ion-row>
+              <ion-col col-12><ion-item-divider color="primary"> Información general </ion-item-divider></ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col col-xs-12 class="monto-input">
+                    <ion-item><ion-label stacked>Monto: </ion-label><ion-input value="{{pago_model.monto}}" readonly disabled></ion-input></ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col col-xs-12>
+                  <ion-item><ion-label stacked>Número de servicio: </ion-label><ion-textarea value="{{pago_model.descripcion}}" readonly disabled></ion-textarea></ion-item>
+              </ion-col>
+            </ion-row>
+        </ion-col>
+
+        <form id="pay" name="pay" col-12 col-sm-8 col-md-8 col-lg-9 col-xl-4>
+            <ion-row>
+              <ion-col col-12><ion-item-divider color="primary"> Datos del medio de pago </ion-item-divider></ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col col-xs-12>
+                    <ion-item><ion-label stacked>Email:</ion-label> <ion-input type="email" [(ngModel)]="pago_model.email" [ngModelOptions]="{standalone:true}"></ion-input> </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col col-12 col-sm-10>
+                    <ion-item><ion-label stacked>Número Tarjeta:</ion-label> <ion-input type="text" #cardNumber (keyup)="guessingPaymentMethod()" (change)="guessingPaymentMethod()" data-checkout="cardNumber" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></ion-input></ion-item>
+                </ion-col>
+                <ion-col col-12 col-sm-2>
+                  <ion-item><ion-label stacked>Código de seguridad:</ion-label><ion-input type="text" #securityCode data-checkout="securityCode" placeholder="123" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></ion-input></ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col col-xs-6>
+                    <ion-item><ion-label stacked>Mes vencimiento:</ion-label><ion-input type="text" #cardExpirationMonth data-checkout="cardExpirationMonth" placeholder="12" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></ion-input></ion-item>
+                </ion-col>
+                <ion-col col-xs-6>
+                    <ion-item><ion-label stacked>Año vencimiento:</ion-label><ion-input type="text" #cardExpirationYear data-checkout="cardExpirationYear" placeholder="2025" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off></ion-input></ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col col-xs-12>
+                    <ion-item><ion-label stacked>Nombre:</ion-label><ion-input type="text" #cardholderName data-checkout="cardholderName" placeholder="APRO"></ion-input></ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col col-xs-12>
+                    <ion-label stacked>Tipo de Documento:</ion-label><select type="text" #docType data-checkout="docType"></select>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col col-xs-12>
+                    <ion-item><ion-label stacked>Número de Documento:</ion-label><ion-input type="text" #docNumber data-checkout="docNumber" placeholder="12345678"></ion-input></ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col col-xs-12>
+                    <button ion-button block color="secondary" (click)="doPay()">Ingresar Pago</button>
+                </ion-col>
+            </ion-row>
+        </form>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,5 +1,26 @@
 {
-  "urlAuthLogin":"http://34.216.72.1/PHPAuth/API/session/login",
-  "urlAuthReset":"http://34.216.72.1/PHPAuth/API/session/new-reset-pass-token",
-  "urlAuthUpdatePass":"http://34.216.72.1/PHPAuth/API/session/update-pass"
+  "urlAuthLogin":"https://demos.coodesoft.com.ar/PHPAuth/API/session/login",
+  "urlAuthReset":"https://demos.coodesoft.com.ar/PHPAuth/API/session/new-reset-pass-token",
+  "urlAuthUpdatePass":"https://demos.coodesoft.com.ar/PHPAuth/API/session/update-pass",
+
+  "urlNewUser":"https://demos.coodesoft.com.ar/PHPAuth/API/user/create",
+  "urlGetOneUser":"https://demos.coodesoft.com.ar/PHPAuth/API/user/get-one",
+  "urlEditUser":"https://demos.coodesoft.com.ar/PHPAuth/API/user/edit",
+  "urlDeleteUser":"https://demos.coodesoft.com.ar/PHPAuth/API/user/delete",
+  "urlGetAllUser":"https://demos.coodesoft.com.ar/PHPAuth/API/user/get-all",
+  "urlEnableUser":"https://demos.coodesoft.com.ar/PHPAuth/API/user/enable",
+
+  "urlGetAllRols":"https://demos.coodesoft.com.ar/PHPAuth/API/rol/get-all",
+
+  "urlGetAllOrganizations":"https://demos.coodesoft.com.ar/PHPAuth/API/organization/get-all",
+  "urlGetOneOrganization":"https://demos.coodesoft.com.ar/PHPAuth/API/organization/get-one",
+  "urlNewOrganization":"https://demos.coodesoft.com.ar/PHPAuth/API/organization/create",
+  "urlEditOrganization":"https://demos.coodesoft.com.ar/PHPAuth/API/organization/edit",
+  "urlDeleteOrganization":"https://demos.coodesoft.com.ar/PHPAuth/API/organization/delete",
+  "urlEnableOrganization":"https://demos.coodesoft.com.ar/PHPAuth/API/organization/enable",
+
+  "urlNewPago":"https://demos.coodesoft.com.ar/PHPAuth/API/pago/nuevo",
+  "urlProcessPago":"https://demos.coodesoft.com.ar/PHPAuth/API/pago/procesar",
+
+  "MP_public_key":"TEST-fba76d81-be88-4449-b5b6-0c9aec79e38d"
 }

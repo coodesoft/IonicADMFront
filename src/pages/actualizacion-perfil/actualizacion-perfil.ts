@@ -43,7 +43,8 @@ export class ActualizacionPerfilPage {
   }
 
   newPass(){
-    this.authProvider.updatePass({
+    this.newMensaje('El cambio de contraseña está deshabilitado');
+    /*this.authProvider.updatePass({
       "pass":this.newPassForm.controls.pass.value,
       "npass":this.newPassForm.controls.npass.value,
       "rpass":this.newPassForm.controls.rpass.value
@@ -62,6 +63,6 @@ export class ActualizacionPerfilPage {
     }, err => {
       this.newMensaje('Ocurrió un error al intentar actualizar la contraseña');
     });
-
+*/
   }
 }

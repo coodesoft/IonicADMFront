@@ -9,6 +9,10 @@ import { HomePage }                from '../pages/home/home';
 import { LoginPage }               from '../pages/login/login';
 import { ActualizacionPerfilPage } from '../pages/actualizacion-perfil/actualizacion-perfil';
 
+import { NuevoPagoPage }  from '../pages/mercado-pago/nuevo-pago/nuevo-pago';
+import { UserAdmPage }    from '../pages/user/user-adm/user-adm';
+import { EmpresaAdmPage } from '../pages/empresa/empresa-adm/empresa-adm';
+
 // Side Menu Component
 import { SideMenuContentComponent } from './../shared/side-menu-content/side-menu-content.component';
 import { SideMenuSettings }         from './../shared/side-menu-content/models/side-menu-settings';
@@ -82,6 +86,30 @@ export class MyApp {
       temp = { displayName: 'Personal', subItems: [] };
 
       temp.subItems.push({	iconName: 'person',	displayName: 'Mi perfil',	component: ActualizacionPerfilPage });
+
+      this.options.push(temp);
+    }
+
+    /*if(this.codeInFuntions('NPago',functions)){
+      temp = { displayName: 'Pagos', subItems: [] };
+
+      temp.subItems.push({	iconName: 'person',	displayName: 'Ingresar pago',	component: NuevoPagoPage });
+
+      this.options.push(temp);
+    }*/
+
+    if(this.codeInFuntions('EUser',functions) || this.codeInFuntions('DUser',functions) || this.codeInFuntions('NUser',functions)){
+      temp = { displayName: 'Usuarios', subItems: [] };
+
+      temp.subItems.push({	iconName: 'person',	displayName: 'Administrar',	component: UserAdmPage });
+
+      this.options.push(temp);
+    }
+
+    if(this.codeInFuntions('NOrga',functions) || this.codeInFuntions('DOrga',functions) || this.codeInFuntions('EOrga',functions)){
+      temp = { displayName: 'Organizaciones', subItems: [] };
+
+      temp.subItems.push({	iconName: 'briefcase',	displayName: 'Administrar',	component: EmpresaAdmPage });
 
       this.options.push(temp);
     }
