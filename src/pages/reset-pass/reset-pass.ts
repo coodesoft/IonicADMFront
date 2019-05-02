@@ -29,7 +29,8 @@ export class ResetPassPage {
   }
 
   resetPass() {
-    this.presentLoading();
+      this.newMensaje('La función de recuperación de contraseña está desabilitada en esta demo');
+    /*this.presentLoading();
     this.authProvider.resetPass({
       "email":this.rPassForm.controls.user.value
     })
@@ -38,7 +39,7 @@ export class ResetPassPage {
         this.newMensaje('Verifique su e-mail, si el usuario existe le debe haber llegado un enlace para resetear su contraseña');
       }, err => {
         this.newMensaje('Ocurrió un error al intentar realizar la consulta');
-      });
+      });*/
   }
 
   ionViewDidLoad() { }
